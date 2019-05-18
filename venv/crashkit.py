@@ -30,6 +30,18 @@ class KMeans:
         self.x = [[r(), r()] for _ in range(samples)]
 
     def show(self):
+        for i, c in enumerate(self.kentroidi):
+            plt.scatter(c.pos[0], c.pos[1], marker = 'o' , color=c.color, s=75)
+            x_coord = [x[0] for x in c.points]
+            y_coord = [y[0] for y in c.points]
+            plt.scatter(x_coord, y_coord, marker = '.', color= c.color)
+
+        plt.xlabel('X')
+        plt.ylabel ('Y')
+        title = 'K-Means'
+        plt.title(title)
+        plt.savefig('{}.png'.format(title))
+        plt.show()
 
 
     def assign_kentroidi(self,x):
@@ -59,7 +71,7 @@ class KMeans:
             for point in self.x:
                 closest = self.assign_kentroidi(point)
                 closest.points.append(point)
-            if len([c for c in self.kentroidi if c.points == c.previous_points]) == self.n_kentroidi:
+            if len([c for c in self.kentroidi if c.points == c.previouspoints]) == self.n_kentroidi:
                 fit = True
                 self._update_kentroidi(reset=False)
             else:
@@ -73,4 +85,5 @@ class KMeans:
 if __name__ == '__main__':
     km = KMeans()
     km.sample_data()
-    km.assign_kentroidi(km.x[0])
+    km.fit()
+    km.show()
