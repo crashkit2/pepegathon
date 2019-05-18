@@ -2,7 +2,7 @@ import os
 import sys
 import csv
 
-ip_file = (r'website-access.log')
+ip_file = (r'biglog.log.txt')
 op_file = (ip_file.split("."))
 
 print("Opening " + ip_file)
