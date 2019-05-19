@@ -57,15 +57,12 @@ for line in cols:
         SQLinjcount = SQLinjcount + 1
 
 
-
-
 def readFile(path):
     with open(path) as fin:
         for line in fin:
             actual = re.findall(r'.*GET(.*)HTTP', line)
-            print (actual)
+            print(actual)
     pass
-
 
 
 readFile("C:/Users/crash/PycharmProjects/pepegathon/venv/biglog.log.txt")
