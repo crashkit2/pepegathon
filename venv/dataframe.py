@@ -67,6 +67,10 @@ def readFile(path):
 
 readFile("C:/Users/crash/PycharmProjects/pepegathon/venv/biglog.log.txt")
 
+print ('Traffic sum = ',g)
+print ('5xx Errors found : ',count)
+print ('Different IPs found (20): ',df)
+
 print ("Possible SQL injection attacks found : ",SQLinjcount)
 print ("Possible XSS attacks found : ",XSScount)
 print ("Possible LFI attacks found : ",LFIcount)
